@@ -1,0 +1,82 @@
+[
+	// Fix home and end keys under OS X
+	{ "keys": ["home"], "command": "move_to", "args": {"to": "bol"} },
+	{ "keys": ["end"], "command": "move_to", "args": {"to": "eol"} },
+	{ "keys": ["shift+end"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+	{ "keys": ["shift+home"], "command": "move_to", "args": {"to": "bol", "extend": true } },
+
+	// Do not copy when selection is empty. If full line copy is intended, use super+alt+c
+	{ "keys": ["super+c"], "command": "noop", "context":
+		[
+			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true }
+		]
+	},
+	{ "keys": ["super+c"], "command": "copy", "context":
+		[
+			{ "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true }
+		]
+	},
+	{ "keys": ["super+alt+c"], "command": "copy", "context":
+		[
+			{ "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true }
+		]
+	},
+	{ "keys": ["super+alt+c"], "command": "copy", "context":
+		[
+			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true }
+		]
+	},
+	// This is a bit nasty seeing as these keys are used for other things in sublime under normal circumstances
+	// However, I'm finding the danish alt-combinations a tad too tough to hit on a mac keyboard, and these bindings seem to do the trick
+	{ "keys": ["command+8"], "command": "insert", "args": {"characters": "["}},
+	{ "keys": ["command+9"], "command": "insert", "args": {"characters": "]"}},
+	// Auto-pair square brackets
+	{ "keys": ["command+8"], "command": "insert_snippet", "args": {"contents": "[$0]"}, "context":
+		[
+			{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+			{ "key": "following_text", "operator": "regex_contains", "operand": "^(?:\t| |\\)|]|;|\\}|$)", "match_all": true }
+		]
+	},
+	{ "keys": ["command+8"], "command": "insert_snippet", "args": {"contents": "[${0:$SELECTION}]"}, "context":
+		[
+			{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+			{ "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true }
+		]
+	},
+	{ "keys": ["command+9"], "command": "move", "args": {"by": "characters", "forward": true}, "context":
+		[
+			{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+			{ "key": "following_text", "operator": "regex_contains", "operand": "^\\]", "match_all": true }
+		]
+	},
+	{ "keys": ["command+7"], "command": "insert", "args": {"characters": "{"}},
+	{ "keys": ["command+0"], "command": "insert", "args": {"characters": "}"}},
+	// Auto-pair curly brackets
+	{ "keys": ["command+7"], "command": "insert_snippet", "args": {"contents": "{$0}"}, "context":
+		[
+			{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+			{ "key": "following_text", "operator": "regex_contains", "operand": "^(?:\t| |\\)|]|\\}|$)", "match_all": true }
+		]
+	},
+	{ "keys": ["command+7"], "command": "insert_snippet", "args": {"contents": "{${0:$SELECTION}}"}, "context":
+		[
+			{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+			{ "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true }
+		]
+	},
+	{ "keys": ["command+0"], "command": "move", "args": {"by": "characters", "forward": true}, "context":
+		[
+			{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+			{ "key": "following_text", "operator": "regex_contains", "operand": "^\\}", "match_all": true }
+		]
+	},
+	{ "keys": ["command+4"], "command": "insert", "args": { "characters": "$"}},
+	{ "keys": ["command+2"], "command": "insert", "args": { "characters": "@"}},
+	{ "keys": ["command+<"], "command": "insert", "args": { "characters": "\\"}},
+	// I do not know how to get this to work? I'm assuming it is because of the dead key
+	{ "keys": ["command+´"], "command": "insert", "args": { "characters": "|"}}
+]
