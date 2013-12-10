@@ -20,3 +20,6 @@ if $trace; then
 	# restore stderr to the value saved in FD 3
 	exec 2>&3 3>&-
 fi
+
+alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+alias subl3="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
