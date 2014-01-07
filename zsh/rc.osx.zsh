@@ -13,3 +13,5 @@ fi
 if [[ -z "$LANG" ]]; then
 	export LANG='en_US.UTF-8'
 fi
+
+alias gitx='/Applications/GitX.app/Contents/Resources/gitx'

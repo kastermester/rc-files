@@ -1,0 +1,6 @@
+#!/bin/bash
+# On OSX install with:
+#   sudo defaults write com.apple.loginwindow LogoutHook $HOME/.homesick/repos/dotfiles/suspend_virtualboxes
+for uuid in $(VBoxManage list runningvms | awk '{print $NF}'); do
+	VBoxManage controlvm ${uuid} savestate
+done

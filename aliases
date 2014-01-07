@@ -6,12 +6,6 @@ alias pull='git pull'
 alias pullr='git pull --recurse-submodules'
 alias unstage='git reset HEAD'
 
-alias grep='grep -Hn'
 alias l='ls -CF'
 alias ll='ls -al'
 alias la='ls -A'
-
-alias mis='cat'
-alias canhaz='sudo apt-get install'
-
-alias a2r='sudo /etc/init.d/apache2 reload'
