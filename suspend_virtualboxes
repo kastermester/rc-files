@@ -7,5 +7,5 @@ if [[ $current_user != $user ]]; then
 	sudo="sudo -u $user"
 fi
 for uuid in $($sudo VBoxManage list runningvms | awk '{print $NF}'); do
-	$sudo VBoxManage controlvm ${uuid} savestate
+	$sudo VBoxManage controlvm ${uuid} acpipowerbutton
 done

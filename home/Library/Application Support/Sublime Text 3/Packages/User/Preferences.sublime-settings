@@ -2,6 +2,7 @@
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
 	"drag_text": false,
+	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": true,
 	"fallback_encoding": "UTF-8",
 	"folder_exclude_patterns":
@@ -18,20 +19,18 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"Vintage",
 		"Solarized Color Scheme",
-		"Vintage"
+		"sublime-github",
+		"ASP",
+		"PHP Zend Debugger"
 	],
 	"match_brackets_angle": true,
 	"open_files_in_new_window": false,
 	"scroll_past_end": false,
 	"shift_tab_unindent": true,
+	"show_encoding": true,
+	"show_line_endings": true,
 	"trim_trailing_white_space_on_save": true,
-	"use_simple_full_screen": true,
-    // Allows tabs to scroll left and right, instead of simply shrinking
-    "enable_tab_scrolling": false,
-    // Display file encoding in the status bar
-    "show_encoding": true,
-
-    // Display line endings in the status bar
-    "show_line_endings": true,
+	"use_simple_full_screen": true
 }

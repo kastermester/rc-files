@@ -15,3 +15,4 @@ if [[ -z "$LANG" ]]; then
 fi
 
 alias gitx='/Applications/GitX.app/Contents/Resources/gitx'
+export PATH="/usr/local/sbin:$(brew --prefix josegonzalez/php/php54)/bin:$PATH:/usr/local/mysql/bin"
