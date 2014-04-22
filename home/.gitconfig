@@ -1,0 +1,32 @@
+[include]
+	path = ~/.gitconfig-local
+[user]
+	name = Kaare Hoff Skovgaard
+[core]
+	editor = nano
+	autocrlf = input
+	whitespace = cr-at-eol
+	eol = input
+[push]
+	default = simple
+[log]
+	date = relative
+[format]
+	pretty = format:%C(yellow)%h %Cblue%<(18)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+	; pretty = format:%C(yellow)%h %C(cyan)%ad %Cgreen%aN%Cred%d %Creset%s
+[alias]
+    ; Meta command - lists all aliases
+    la = "!git config -l | grep alias | cut -c 7-"
+    ; Prettier status
+    st = status -sb
+    ; Rebase unpushed commits
+    ready = rebase -i @{u}
+    purr = pull --rebase
+    puff = pull --ff-only
+    sur = submodule update --recursive
+    merg = merge --no-commit
+    lg = log --graph --abbrev-commit
+[color]
+    ui = true
+[diff]
+	algorithm = patience

@@ -23,3 +23,5 @@ fi
 
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias subl3="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+export LESS="$LESS -r"
+export PATH="/usr/local/bin:$PATH"

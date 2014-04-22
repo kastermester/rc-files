@@ -19,11 +19,11 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage",
-		"Solarized Color Scheme",
-		"sublime-github",
 		"ASP",
-		"PHP Zend Debugger"
+		"Solarized Color Scheme",
+		"Vintage",
+		"PHP Zend Debugger",
+		"sublime-github"
 	],
 	"match_brackets_angle": true,
 	"open_files_in_new_window": false,
