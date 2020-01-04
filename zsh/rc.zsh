@@ -25,12 +25,12 @@ if [[ -e $omz_dir/oh-my-zsh.sh ]] then
 	if [[ -z "$ZSH_THEME" ]] then
 		ZSH_THEME="jreese"
 	fi
-	plugins+=(ant cake coffee extract history-substring-search pip colored-man vagrant)
+	plugins+=(ant cake coffee extract history-substring-search pip vagrant)
 	if [[ $system == 'Linux' ]]; then
 		plugins+=()
 	fi
 	if [[ $system == 'OSX' ]]; then
-		plugins+=(brew terminalapp osx)
+		plugins+=(brew  osx)
 	fi
 	source $omz_dir/oh-my-zsh.sh
 	unsetopt correct_all
