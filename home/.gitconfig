@@ -1,7 +1,9 @@
-[include]
-	path = ~/.gitconfig-local
 [user]
 	name = Kaare Hoff Skovgaard
+	email = kaare@kaareskovgaard.net
+[include]
+	path = ~/.gitconfig-local
+
 [core]
 	editor = nano
 	autocrlf = input
@@ -12,21 +14,28 @@
 [log]
 	date = relative
 [format]
-	pretty = format:%C(yellow)%h %Cblue%<(18)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+	pretty = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D
+	; pretty = format:%C(yellow)%h %Cblue%<(18)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
 	; pretty = format:%C(yellow)%h %C(cyan)%ad %Cgreen%aN%Cred%d %Creset%s
 [alias]
     ; Meta command - lists all aliases
     la = "!git config -l | grep alias | cut -c 7-"
-    ; Prettier status
-    st = status -sb
     ; Rebase unpushed commits
     ready = rebase -i @{u}
-    purr = pull --rebase
+    purr = pull --rebase --summary
     puff = pull --ff-only
+    pull = pull --ff-only
     sur = submodule update --recursive
-    merg = merge --no-commit
     lg = log --graph --abbrev-commit
+    meff = merge --ff-only
+    meff-onto = "!f() { if [ -z "$1" ]; then printf 'Missing branch parameter\nUsage: git meff-onto <target-branch>\n'; exit 1; else git fetch . HEAD:"$1" && git checkout "$1"; fi }; f"
 [color]
     ui = true
 [diff]
 	algorithm = patience
+[commit]
+    gpgSign = true
+[push]
+    gpgSign = if-asked
+[rerere]
+    enabled=true
