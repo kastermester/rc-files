@@ -33,9 +33,5 @@
     ui = true
 [diff]
 	algorithm = patience
-[commit]
-    gpgSign = true
-[push]
-    gpgSign = if-asked
 [rerere]
     enabled=true
