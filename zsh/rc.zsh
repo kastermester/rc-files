@@ -17,7 +17,7 @@ source $HOME/.homesick/repos/homeshick/homeshick.sh
 homeshick --quiet refresh 14 $HOMESHICK_REFRESH_REPOS
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 
-omz_dir=$HOME/.homesick/repos/oh-my-zsh
+omz_dir=$HOME/.homesick/repos/ohmyzsh
 if [[ -e $omz_dir/oh-my-zsh.sh ]] then
 	export ZSH=$omz_dir
 	# Let homeshick handle the updating
