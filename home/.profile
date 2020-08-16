@@ -1,7 +1,4 @@
-#!/bin/sh.exe
-if [ $0 -ne 'bash' -a `uname` -eq 'MINGW32_NT-6.1' ]; then
-	exec bash
-fi
+#!/bin/bash
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.
@@ -24,3 +21,5 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+export PATH="$HOME/.cargo/bin:$PATH"
