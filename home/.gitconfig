@@ -29,6 +29,10 @@
     lg = log --graph --abbrev-commit
     meff = merge --ff-only
     meff-onto = "!f() { if [ -z "$1" ]; then printf 'Missing branch parameter\nUsage: git meff-onto <target-branch>\n'; exit 1; else git fetch . HEAD:"$1" && git checkout "$1"; fi }; f"
+    recommit = !bash -c 'commit_file=$(git rev-parse --git-dir)/COMMIT_EDITMSG && \
+                       grep -v "^#" $commit_file > $commit_file.tmp && \
+                       git commit -e -F $commit_file.tmp && \
+                       rm $commit_file.tmp'
 [color]
     ui = true
 [diff]
