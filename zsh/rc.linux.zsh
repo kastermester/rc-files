@@ -7,3 +7,4 @@ alias rm='rm -I'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+export VAGRANT_BRIDGE=$(ip route get 8.8.8.8 | grep -Po '(?<=(dev )).*(?= src| proto)')
