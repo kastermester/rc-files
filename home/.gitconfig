@@ -3,7 +3,6 @@
 	email = kaare@kaareskovgaard.net
 [include]
 	path = ~/.gitconfig-local
-
 [core]
 	editor = nano
 	autocrlf = input
@@ -18,27 +17,27 @@
 	; pretty = format:%C(yellow)%h %Cblue%<(18)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
 	; pretty = format:%C(yellow)%h %C(cyan)%ad %Cgreen%aN%Cred%d %Creset%s
 [alias]
-    ; Meta command - lists all aliases
-    la = "!git config -l | grep alias | cut -c 7-"
-    ; Rebase unpushed commits
-    ready = rebase -i @{u}
-    purr = pull --rebase --summary
-    puff = pull --ff-only
-    pull = pull --ff-only
-    sur = submodule update --recursive
-    lg = log --graph --abbrev-commit
-    meff = merge --ff-only
-    meff-onto = "!f() { if [ -z "$1" ]; then printf 'Missing branch parameter\nUsage: git meff-onto <target-branch>\n'; exit 1; else git fetch . HEAD:"$1" && git checkout "$1"; fi }; f"
-    recommit = !bash -c 'commit_file=$(git rev-parse --git-dir)/COMMIT_EDITMSG && \
-                       grep -v "^#" $commit_file > $commit_file.tmp && \
-                       git commit -e -F $commit_file.tmp && \
-                       rm $commit_file.tmp'
+	; Meta command - lists all aliases
+	la = "!git config -l | grep alias | cut -c 7-"
+	; Rebase unpushed commits
+	ready = rebase -i @{u}
+	purr = pull --rebase --summary
+	puff = pull --ff-only
+	sur = submodule update --recursive
+	lg = log --graph --abbrev-commit
+	meff = merge --ff-only
+	meff-onto = "!f() { if [ -z "$1" ]; then printf 'Missing branch parameter\nUsage: git meff-onto <target-branch>\n'; exit 1; else git fetch . HEAD:"$1" && git checkout "$1"; fi }; f"
+	recommit = !bash -c 'commit_file=$(git rev-parse --git-dir)/COMMIT_EDITMSG && \
+	           grep -v "^#" $commit_file > $commit_file.tmp && \
+	           git commit -e -F $commit_file.tmp && \
+	           rm $commit_file.tmp'
 [color]
-    ui = true
+	ui = true
 [diff]
 	algorithm = patience
 [rerere]
-    enabled=true
-
+	enabled=true
 [pull]
 	ff = only
+[commit]
+	gpgsign = true
